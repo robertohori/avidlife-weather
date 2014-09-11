@@ -28,7 +28,7 @@ define(function (require) {
 
         it('should get name equal sao paulo', function (done) {
             weather_client
-                .getToday('sao paulo')
+                .getToday('sao paulo','metric')
                 .then(function (data) {
 
                     assert.isNotNull(data);
@@ -40,7 +40,7 @@ define(function (require) {
 
         it('should get total days of temperature equal 7', function (done) {
             weather_client
-                .getForecast('sao paulo')
+                .getWeek('sao paulo','metric')
                 .then(function (data) {
 
                     assert.isNotNull(data);
