@@ -45,6 +45,7 @@ body {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+ background-color: #eeeeee;
 }
 /*.jumbotron .btn {
   padding: 14px 24px;
@@ -76,4 +77,19 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+h1, h2,h3,h4,h5,p{
+    text-align: center;
+}
+
+.sombrarredondada{
+   background-color: #fafafa;
+   color: #404040;
+   
+   -moz-border-radius: 7px;
+   -webkit-border-radius: 7px;
+   
+   box-shadow: 5px -5px 2px #eeeeee;
+   -webkit-box-shadow: 5px -5px 2px #eeeeee;
+   -moz-box-shadow: 5px -5px 2px #eeeeee;
 }

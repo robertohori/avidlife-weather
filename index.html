@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
 
-    <title>Narrow Jumbotron Template for Bootstrap</title>
+    <title>WeatherNow</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -33,24 +33,16 @@
 
     <div class="container">
         <div class="header">
-            <ul class="nav nav-pills pull-right">
-                <li class="active"><a href="#">Home</a>
-                </li>
-                <li><a href="#">About</a>
-                </li>
-                <li><a href="#">Contact</a>
-                </li>
-            </ul>
-            <h3 class="text-muted">Weather</h3>
+            <h1 class="text-muted" id="titlemain">WeatherNow</h1> 
         </div>
 
         <div class="jumbotron" id="main">
 
 
-            <input type="text" value="São Paulo" id="city">
+            <input type="text" value="" id="city">
             <button id="enviar">Teste</button>
             <!-- Required Mocha tag. -->
-            <div id="mocha">teste</div>
+          
 
 
 
@@ -59,10 +51,9 @@
         <div id="week"></div>
 
         <div class="footer">
-            <p>&copy; Company 2014</p>
+            <p>&copy; Roberto Hori 2014</p>
         </div>
 
-    </div>
     <!-- /container -->
 
     <script data-main="lib/main.js" src="bower_components/requirejs/require.js"></script>
