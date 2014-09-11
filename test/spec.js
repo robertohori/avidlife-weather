@@ -26,7 +26,7 @@ define(function(require) {
 
     });
 
-  /*  it('should get name equal sao paulo', function (done) {
+   it('should get name equal sao paulo', function (done) {
       weather_client
         .getToday('sao paulo')
         .then(function (data) {
@@ -36,8 +36,8 @@ define(function(require) {
           
           done(); 
         }, null); 
-    });*/
-
+    });
+ 
   });
 
 });
