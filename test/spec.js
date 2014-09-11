@@ -3,41 +3,53 @@
  *
  *    Library test
  */
-define(function(require) {
-  
-  'use strict'
+define(function (require) {
 
-  var chai            = require('chai'),
-      assert          = chai.assert,
-      weather_client  = require('weather-client');
+    'use strict'
 
-  describe('get weather by location', function () {
+    var chai = require('chai'),
+        assert = chai.assert,
+        weather_client = require('weather-client');
 
-    this.timeout(10000);
+    describe('get weather by location', function () {
 
-    it('should return null when location is null', function (done) {
+        this.timeout(10000);
 
-      weather_client
-        .getToday(null)
-        .then(null, function (data) {
-          assert.isNull(data);
-          done();
+        it('should return null when location is null', function (done) {
+
+            weather_client
+                .getToday(null)
+                .then(null, function (data) {
+                    assert.isNull(data);
+                    done();
+                });
+
+        });
+
+        it('should get name equal sao paulo', function (done) {
+            weather_client
+                .getToday('sao paulo')
+                .then(function (data) {
+
+                    assert.isNotNull(data);
+                    assert.equal(data.name, 'Sao Paulo');
+
+                    done();
+                }, null);
+        });
+
+        it('should get total days of temperature equal 7', function (done) {
+            weather_client
+                .getForecast('sao paulo')
+                .then(function (data) {
+
+                    assert.isNotNull(data);
+                    assert.equal(data.totaldays, 7);
+                    assert.lengthOf(data.list,7);    
+                    done();
+                }, null);
         });
 
     });
-
-   it('should get name equal sao paulo', function (done) {
-      weather_client
-        .getToday('sao paulo')
-        .then(function (data) {
-
-          assert.isNotNull(data);
-          assert.equal(data.name, 'Sao Paulo');
-          
-          done(); 
-        }, null); 
-    });
- 
-  });
 
 });
