@@ -38,14 +38,13 @@ define(function (require) {
                 }, null);
         });
 
-        it('should get total days of temperature equal 7', function (done) {
+        it('should get total days of temperature equal 8', function (done) {
             weather_client
                 .getWeek('sao paulo','metric')
                 .then(function (data) {
-
                     assert.isNotNull(data);
-                    assert.equal(data.totaldays, 7);
-                    assert.lengthOf(data.list,7);    
+                    assert.equal(data.totaldays, 8);
+                    assert.lengthOf(data.list,8);    
                     done();
                 }, null);
         });
