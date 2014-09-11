@@ -11,15 +11,31 @@ define(function(require) {
       assert          = chai.assert,
       weather_client  = require('weather-client');
 
-  describe('tests ok', function () {
+  describe('get weather by location', function () {
 
     this.timeout(10000);
 
-    it('should be ok', function (done) {
+    it('should return null when location is null', function (done) {
 
-        assert.equal(weather_client.calc(), 1);
-        done();
-        
+      weather_client
+        .getToday(null)
+        .then(null, function (data) {
+          assert.isNull(data);
+          done();
+        });
+
+    });
+
+    it('should get name equal sao paulo', function (done) {
+      weather_client
+        .getToday('sao paulo')
+        .then(function (data) {
+
+          assert.isNotNull(data);
+          assert.equal(data.name, 'Sao Paulo');
+          
+          done(); 
+        }, null); 
     });
 
   });
